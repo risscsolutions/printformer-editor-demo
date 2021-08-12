@@ -1,0 +1,35 @@
+{
+  "name": "printformer-editor-client-demo",
+  "version": "0.0.1",
+  "description": "Printformer Demo for Editor Client",
+  "main": "index.js",
+  "author": "Hannes Stefani",
+  "license": "ISC",
+  "scripts": {
+    "dev": "parcel index.html --no-hmr",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@rissc/printformer-editor-client": "^1.0.13",
+    "@rissc/printformer-ts-common": "^1.0.8",
+    "bulma": "^0.9.3",
+    "eventemitter3": "^4.0.7",
+    "lodash": "^4.17.21",
+    "vee-validate": "^3.4.11",
+    "vue": "^2.6.14",
+    "vue-bulma-accordion": "^0.5.2",
+    "vue-cropperjs": "4.2.0",
+    "vue-hot-reload-api": "^2.3.4",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.2.2",
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.36.0",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+    "name": "rissc/printformer-editor-client-demo",
+    "type": "project",
+    "require": {
+        "vlucas/phpdotenv": "^5.3",
+        "guzzlehttp/guzzle": "^7.3",
+        "lcobucci/jwt": "^4.1",
+        "nesbot/carbon": "^2.51"
+    },
+    "authors": [
+        {
+            "name": "has",
+            "email": "has@rissc.de"
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Printformer - Editor Client - Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="/node_modules/@fortawesome/fontawesome-free/js/brands.js"></script>
+    <script defer src="/node_modules/@fortawesome/fontawesome-free/js/solid.js"></script>
+    <script defer src="/node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.css">
+    <link rel="stylesheet" href="src/styles/app.scss">
+</head>
+<body>
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <div class="box" id="pf-container">
+                    <iframe id="editor-iframe" style="width: 100%; height: 100%; min-height: 500px"></iframe>
+                    <iframe id="three-dee-iframe" style="width: 100%; height: 100%; display: none"></iframe>
+                </div>
+                <div class="box">
+                    <div id="pages">
+                        <page-preview></page-preview>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div id="main">
+                    <editor-section></editor-section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    window.pfJWT = '__REPLACE_ME_WITH_JWT__';
+    window.pfURL = '__REPLACE_ME_WITH_PFURL__';
+</script>
+<script src="index.js"></script>
+</body>
+</html>
