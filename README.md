@@ -1,22 +1,21 @@
 # Editor Client API Demo
 
-## Ordnerstruktur
+## Folder structure
 
-| Ordnername   |      Funktion      |
+| Foldername   |      Function      |
 |----------|:-------------:|
-| dist |  Der Build Ordner von Parcel |
-| src |  Hier liegt der Code der ganzen Demo |
-| src/components |  In diesem Ordner befinden sich alle einzelnen vue-componenten|
-| src/styles |  Hier werden alle style Dateien von css oder scss abgelegt und in der index.html eingebunden
+| dist |  parcel build folder |
+| src |  code of whole project |
+| src/components |  all vue components are here |
+| src/styles |  this folder is for all the styles like css or scss files |
 
 
-## Demo Installieren
+## Demo Installation
 
-Als erstes wird dieses Repository wie folgt installiert:
+First we clone this repository:
 
 `git clone https://github.com/rissc/printformer-editor-demo.git` <br><br>
-Damit die Demo-Anwendung genutzt werden kann, werden ein paar Environment-Variablen benötigt. In der `.env.example` ist
-vorgegeben, welche Variablen benötigt werden.
+To use the demo application we need some enviroment variables The `.env.example` shows which variables we need.
 <br>
 <br>
 `PRINTFORMER_URL = ''`<br>
@@ -27,30 +26,25 @@ vorgegeben, welche Variablen benötigt werden.
 `PRINTFORMER_INTENT = ''`<br>
 `NPM_REGISTRY_TOKEN = ''`<br>
 <br>
-Wenn alle Informationen für die Variablen da sind, speichert man alles in einer neuen Datei `.env` ab oder kopiert die
-`.env.example`:
+After filling out all vars we can create a `.env` file or copy the `.env.example`:
 
 `cp .env.example .env `<br><br>
-Der `NPM_REGISTRY_TOKEN` muss zusätzlich in der `.npmrc` mit dem Platzhalter `"NPM_REGISTRY_TOKEN"` ausgetauscht werden. Nur dann können die nötigen privaten Pakete von der rissc-NPM-Registry installiert werden.
+The `NPM_REGISTRY_TOKEN` in the `.npmrc` is needed for authentication with our NPM-Registry. `npm install` will only work if you've been authenticated.
 
-Anschließend kann npm install ausgeführt werden, um alle nötigen Javascript-Dependencies zu installieren. Danach werden
-noch die notwendigen php-composer Pakete mit composer install installiert.
+After that you can safely run `npm install` without authentication issues. For the php dependencies is composer used. Just run `composer install`
 
-Die `Procfile` wird nur für ein Deployment bei Heroku genutzt, um den apache2 documentroot auf den `dist` Ordner zu legen. <br>
+The `Procfile` is only needed for Heroku deployments to change the apache2 documentroot to `dist` <br>
 
-### **Eine funktionstüchtige Demoanwendung ist hier: https://blooming-peak-75988.herokuapp.com/**
+### **Here is a working Demo: https://blooming-peak-75988.herokuapp.com/**
 
-## Lokale Weiterentwicklung 
-Werden nun Änderungen im Code vorgenommen, kann man npm run dev verwenden. Hier wird im Hintergrund der Parcel Watcher auf die index.html Datei gesetzt.
+## Local Development 
+You can use the predefined `npm run dev` command. The parcel-bundler will automatically build and watch the files for changes.
 
 `npm run dev`<br>
-`# oder` <br>
+`# or` <br>
 `parcel index.html --no-hmr`<br><br>
-Außerdem ist es notwendig einen php-server im dist Ordner zu starten. Man wechselt zuerst in
-das dist Verzeichnis mit:
+It is also required to run a local php server in the `dist` folder. On a mac you can do this with:
 
-`cd dist/` <br><br>
-Und startet danach den php-server:
-
+`cd dist/` <br>
 `php -S localhost:9000`<br><br> 
-Das Projekt ist nun unter `http://localhost:9000` erreichbar.   
+The project is now available at `http://localhost:9000`   
