@@ -8,7 +8,7 @@
 | src |  Hier liegt der Code der ganzen Demo |
 | src/components |  In diesem Ordner befinden sich alle einzelnen vue-componenten|
 | src/styles |  Hier werden alle style Dateien von css oder scss abgelegt und in der index.html eingebunden
-|
+
 
 ## Demo Installieren
 
