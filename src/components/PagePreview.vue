@@ -1,15 +1,15 @@
 <template>
-    <div v-if="previewPages.length > 0">
+    <div v-if="previewPages.length > 0" id="page-container">
         <div class="title">Seiten</div>
-        <div class="columns is-multiline">
-            <div class="column is-2" v-for="page in previewPages">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-2-desktop is-2-tablet" v-for="page in previewPages">
                 <figure class="image has-ratio box m-0 p-1"
                         :style="{'border': currentPage === page.pageNumber ? 'black 5px solid': 'transparent 5px solid'}">
                     <img @click="changePage(page.pageNumber)" :src="page.previewImage"/>
                     <h2>Seite {{ page.pageNumber }}</h2>
                 </figure>
             </div>
-            <div class="column is-2 is-flex"
+            <div class="column is-2-desktop is-2-tablet is-flex"
                  style="position:relative;"
                  v-if="has3D"
                  @click="load3DModel()">

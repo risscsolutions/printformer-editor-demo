@@ -4,8 +4,8 @@
         <div class="content is-small">
             <h1>Varianten</h1>
         </div>
-        <div class="columns is-multiline mb-2">
-            <div v-for="variant in variants" @click="loadVariant(variant, variant.id)" class="column is-2">
+        <div class="columns is-multiline is-mobile mb-2">
+            <div v-for="variant in variants" @click="loadVariant(variant, variant.id)" class="column is-2-desktop is-2-tablet">
                 <div v-if="variant.thumbnail.type === 'color'" class="box variant"
                      :class="{'variant-active': currentId === variant.id}"
                      :style="{'background-color': variant.thumbnail.value}">
@@ -45,7 +45,7 @@ export default {
     },
     mounted() {
         this.$editor.getVariants().getActive().then((variant) => {
-            this.currentId = variant.id;
+            if (variant) this.currentId = variant.id;
         });
 
         this.$editor.getVariants().getAll().then((variants) => {

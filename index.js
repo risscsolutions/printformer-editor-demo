@@ -3,7 +3,7 @@ import Vuex from 'vuex';
 import VueCropper from 'vue-cropperjs';
 import EventEmitter from 'eventemitter3';
 import makeStore from "./store";
-import { ValidationProvider } from 'vee-validate/dist/vee-validate.full.esm';
+import {ValidationProvider} from 'vee-validate/dist/vee-validate.full.esm';
 import {configure, ValidationObserver} from 'vee-validate';
 
 import EditorSection from './src/EditorSection';
@@ -35,9 +35,7 @@ configure({
 window.onload = () => {
     const connector = new Connector();
     const editorIframe = document.getElementById('editor-iframe');
-    const pfJWT = window.pfJWT;
-    const pfURL = window.pfURL;
-    editorIframe.src = pfURL + "/auth?jwt=" + pfJWT;
+    editorIframe.src = window.pfURL;
     window.events = new EventEmitter();
 
     // mobile chrome ios fix

@@ -9,7 +9,7 @@ use Lcobucci\JWT\Signer\Hmac\Sha256;
 use Lcobucci\JWT\Signer\Key\InMemory;
 
 try {
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+    $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__ . '/../');
     $dotenv->safeLoad();
 
     $PRINTFORMER_USER = getenv('PRINTFORMER_USER');
@@ -58,10 +58,12 @@ try {
                 ->getToken($configuration->signer(), $configuration->signingKey());
 
             $jwt = $token->toString();
+            $response = $client->request('GET', $PRINTFORMER_URL . '/auth?jwt=' . $jwt, [
+                'allow_redirects' => false
+            ]);
 
             # html content haxor Anno 2002
-            $jwtReplace = str_replace('__REPLACE_ME_WITH_JWT__', $jwt, file_get_contents('index.html'));
-            echo str_replace('__REPLACE_ME_WITH_PFURL__', $PRINTFORMER_URL, $jwtReplace);
+            echo str_replace('__REPLACE_ME_WITH_PFURL__', $response->getHeader('Location')[0], file_get_contents('index.html'));
         } catch (Exception $e) {
             echo $e->getMessage();
             exit(0);

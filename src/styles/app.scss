@@ -1,4 +1,20 @@
 #pf-container {
-  height: calc(100% - 275px);
-  min-height: 550px;
+  height: 1000px;
+  min-height: 1000px;
+}
+
+#editor-iframe {
+  min-height: 950px;
+}
+
+@media only screen and (min-width:300px) and (max-width:968px) {
+  #pf-container, #page-container, #main-container {
+    max-height: 400px;
+    min-height: 0;
+  }
+
+  #editor-iframe, #three-dee-iframe {
+    max-height: 400px;
+    min-height: 0;
+  }
 }
