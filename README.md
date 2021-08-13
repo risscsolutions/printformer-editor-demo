@@ -12,10 +12,10 @@
 
 ## Demo Installieren
 
-Als erstes wird das Repository von Github wie folgt installiert:
+Als erstes wird dieses Repository wie folgt installiert:
 
 `git clone https://github.com/rissc/printformer-editor-demo.git` <br><br>
-Damit die Demo-Anwendung genutzt werden kann, werden ein paar Environment-Variablen benötigt. In der `.env.example` ist<br>
+Damit die Demo-Anwendung genutzt werden kann, werden ein paar Environment-Variablen benötigt. In der `.env.example` ist
 vorgegeben, welche Variablen benötigt werden.
 <br>
 <br>
@@ -27,22 +27,21 @@ vorgegeben, welche Variablen benötigt werden.
 `PRINTFORMER_INTENT = ''`<br>
 `NPM_REGISTRY_TOKEN = ''`<br>
 <br>
-Wenn alle Informationen für die Variablen da sind, speichert man alles in einer neuen<br> Datei `.env` ab oder kopiert die
+Wenn alle Informationen für die Variablen da sind, speichert man alles in einer neuen Datei `.env` ab oder kopiert die
 `.env.example`:
 
 `cp .env.example .env `<br><br>
-Der `NPM_REGISTRY_TOKEN` muss zusätzlich in der `.npmrc` mit dem Platzhalter `"NPM_REGISTRY_TOKEN"` <br>
-ausgetauscht werden. Nur dann können die nötigen privaten Pakete von der rissc-NPM-Registry installiert werden.
+Der `NPM_REGISTRY_TOKEN` muss zusätzlich in der `.npmrc` mit dem Platzhalter `"NPM_REGISTRY_TOKEN"` ausgetauscht werden. Nur dann können die nötigen privaten Pakete von der rissc-NPM-Registry installiert werden.
 
-Anschließend kann npm install ausgeführt werden, um alle nötigen Javascript-Dependencies zu installieren. Danach werden<br>
+Anschließend kann npm install ausgeführt werden, um alle nötigen Javascript-Dependencies zu installieren. Danach werden
 noch die notwendigen php-composer Pakete mit composer install installiert.
 
-Die `Procfile` wird nur für ein Deployment bei Heroku genutzt, um den apache2 documentroot auf den `dist` Ordner zu legen.<br>
-###**Eine funktionstüchtige Demoanwendung ist hier: https://blooming-peak-75988.herokuapp.com/**
+Die `Procfile` wird nur für ein Deployment bei Heroku genutzt, um den apache2 documentroot auf den `dist` Ordner zu legen. <br>
+
+### **Eine funktionstüchtige Demoanwendung ist hier: https://blooming-peak-75988.herokuapp.com/**
 
 ## Lokale Weiterentwicklung 
-Werden nun Änderungen im Code vorgenommen, kann man npm run dev verwenden. Hier wird im <br>
-Hintergrund der Parcel Watcher auf die index.html Datei gesetzt.
+Werden nun Änderungen im Code vorgenommen, kann man npm run dev verwenden. Hier wird im Hintergrund der Parcel Watcher auf die index.html Datei gesetzt.
 
 `npm run dev`<br>
 `# oder` <br>
