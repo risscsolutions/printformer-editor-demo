@@ -4,7 +4,7 @@
         <div class="content is-small">
             <h1>Asstes</h1>
         </div>
-        <BulmaAccordion dropdown :icon="'custom'"
+        <BulmaAccordion dropdown :icon="'custom'" :initial-open-items="[1]"
                         :caretAnimation="{duration: '.6s', timerFunc: 'ease-in-out'}"
                         :slide="{duration: '.9s', timerFunc: 'ease'}">
             <div v-for="picture in pictures" :key="picture.id" class="file has-name is-fullwidth mb-2">
@@ -18,7 +18,7 @@
 import BlockTypes from "@rissc/printformer-ts-common/dist/BlockTypes";
 import CroppingImage from "./CroppingImage";
 import Events from "@rissc/printformer-editor-client/dist/Events";
-import { BulmaAccordion } from 'vue-bulma-accordion';
+import {BulmaAccordion} from 'vue-bulma-accordion';
 
 export default {
     name: "assets",
